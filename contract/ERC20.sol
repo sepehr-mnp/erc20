@@ -24,11 +24,7 @@ contract ERC20 is IERC20 {
 
     constructor(uint256 total) public {
       totalSupply = total;
-      balances[msg.sender] = totalSupply;
-    }
-
-    function totalSupply() public view returns (uint256) {
-      return totalSupply;
+      balanceOf[msg.sender] = totalSupply;
     }
 
     function transfer(address recipient, uint amount) external returns (bool) {
